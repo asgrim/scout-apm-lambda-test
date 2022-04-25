@@ -4,6 +4,9 @@ provider:
     name: aws
     region: eu-west-2
     runtime: provided.al2
+    environment:
+        # Make sure this key exists in the region you are deploying to
+        SCOUT_KEY: ${ssm:/scoutapm/bref-lambda-test/scout-apm-key}
 
 plugins:
     - ./vendor/bref/bref
