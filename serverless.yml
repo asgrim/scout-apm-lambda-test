@@ -10,6 +10,7 @@ provider:
 
 plugins:
     - ./vendor/bref/bref
+    - ./vendor/bref/extra-php-extensions
 
 functions:
     api:
@@ -18,6 +19,7 @@ functions:
         timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
         layers:
             - ${bref:layer.php-81-fpm}
+            - ${bref-extra:scoutapm-php-81}
         events:
             -   httpApi: '*'
 
